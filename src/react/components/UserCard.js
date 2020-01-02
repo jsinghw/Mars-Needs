@@ -47,8 +47,7 @@ class UserCard extends React.Component {
         <img
           src={
             user.pictureLocation
-              ? "https://kwitter-api-benjmm.herokuapp.com" +
-                user.pictureLocation
+              ? "https://mars-needs.herokuapp.com" + user.pictureLocation
               : defaultImage
           }
           alt="User Profile"
