@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from ".";
+import { NavLink } from ".";
 import "./Menu.css";
 import { withAsyncAction, connect } from "../HOCs";
 
@@ -13,22 +13,12 @@ class Menu extends React.Component {
     return (
       <div id="menu">
         <h1>Mars Needs</h1>
-        {this.props.isAuthenticated && (
-          <div id="menu-links">
-            <NavLink
-              activeClassName="selected"
-              to={`/profile/${this.props.username}`}
-            >
-              Your Profile
-            </NavLink>
-            <NavLink activeClassName="selected" to="/messagefeed">
-              Message Feed
-            </NavLink>
-            <Link to="/" onClick={this.handleLogout}>
-              Logout
-            </Link>
-          </div>
-        )}
+        <NavLink activeClassName="selected" to="/">
+          Home
+        </NavLink>
+        <a href="https://www.marssociety.org/" target="new">
+          The Mars Society
+        </a>
       </div>
     );
   }
