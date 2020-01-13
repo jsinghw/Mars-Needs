@@ -6,6 +6,8 @@ import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import { App } from "./react";
 import { store, history } from "./redux";
+// Importing the Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <Provider store={store}>
