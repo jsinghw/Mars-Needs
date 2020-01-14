@@ -7,6 +7,16 @@ import { Modal } from "../../components";
 import "./ReviewPage.css";
 
 class ReviewPage extends React.Component {
+  state = {
+    show: false
+  };
+
+  toggle = () => {
+    this.setState({
+      show: !this.state.show
+    });
+  };
+
   render() {
     const data = {
       columns: [
@@ -42,7 +52,15 @@ class ReviewPage extends React.Component {
           category: "Food & Drink",
           submissionDate: "2020-01-07",
           file: (
-            <MDBBtn className="purple" outline size="sm">
+            <MDBBtn
+              title="Lorem"
+              className="purple"
+              outline
+              size="sm"
+              onClick={e => {
+                this.toggle();
+              }}
+            >
               File
             </MDBBtn>
           )
@@ -53,7 +71,7 @@ class ReviewPage extends React.Component {
           category: "Clothing",
           submissionDate: "2020-01-07",
           file: (
-            <MDBBtn className="purple" outline size="sm">
+            <MDBBtn className="purple" outline size="sm" onClick={this.toggle}>
               File
             </MDBBtn>
           )
@@ -64,7 +82,7 @@ class ReviewPage extends React.Component {
           category: "Vechicles",
           submissionDate: "2020-01-07",
           file: (
-            <MDBBtn className="purple" outline size="sm">
+            <MDBBtn className="purple" outline size="sm" onClick={this.toggle}>
               File
             </MDBBtn>
           )
@@ -75,8 +93,8 @@ class ReviewPage extends React.Component {
           category: "Robotics",
           submissionDate: "2020-01-07",
           file: (
-            <MDBBtn className="purple" outline size="sm">
-              File
+            <MDBBtn className="purple" outline size="sm" onClick={this.toggle}>
+              File <Modal />
             </MDBBtn>
           )
         },
@@ -86,7 +104,7 @@ class ReviewPage extends React.Component {
           category: "Weapons",
           submissionDate: "2020-01-07",
           file: (
-            <MDBBtn className="purple" outline size="sm">
+            <MDBBtn className="purple" outline size="sm" onClick={this.toggle}>
               File
             </MDBBtn>
           )
@@ -97,7 +115,7 @@ class ReviewPage extends React.Component {
           category: "Housing",
           submissionDate: "2020-01-07",
           file: (
-            <MDBBtn className="purple" outline size="sm">
+            <MDBBtn className="purple" outline size="sm" onClick={this.toggle}>
               File
             </MDBBtn>
           )
@@ -108,7 +126,7 @@ class ReviewPage extends React.Component {
           category: "Food & Drink",
           submissionDate: "2020-01-07",
           file: (
-            <MDBBtn className="purple" outline size="sm">
+            <MDBBtn className="purple" outline size="sm" onClick={this.toggle}>
               File
             </MDBBtn>
           )
@@ -119,7 +137,7 @@ class ReviewPage extends React.Component {
           category: "Weapons",
           submissionDate: "2020-01-07",
           file: (
-            <MDBBtn className="purple" outline size="sm">
+            <MDBBtn className="purple" outline size="sm" onClick={this.toggle}>
               File
             </MDBBtn>
           )
@@ -130,7 +148,7 @@ class ReviewPage extends React.Component {
           category: "Energy",
           submissionDate: "2020-01-07",
           file: (
-            <MDBBtn className="purple" outline size="sm">
+            <MDBBtn className="purple" outline size="sm" onClick={this.toggle}>
               File
             </MDBBtn>
           )
@@ -141,7 +159,7 @@ class ReviewPage extends React.Component {
           category: "Misc",
           submissionDate: "2020-01-07",
           file: (
-            <MDBBtn className="purple" outline size="sm">
+            <MDBBtn className="purple" outline size="sm" onClick={this.toggle}>
               File
             </MDBBtn>
           )
@@ -152,7 +170,7 @@ class ReviewPage extends React.Component {
           category: "Personal Care",
           submissionDate: "2020-01-07",
           file: (
-            <MDBBtn className="purple" outline size="sm">
+            <MDBBtn className="purple" outline size="sm" onClick={this.toggle}>
               File
             </MDBBtn>
           )
@@ -164,6 +182,7 @@ class ReviewPage extends React.Component {
       <Container>
         <Menu />
         <h1>Review Page</h1>
+        <Modal show={this.state.show} />
         <MDBDataTable striped bordered hover data={data} />
       </Container>
     );

@@ -1,61 +1,59 @@
-import "./Home.css"
-import React from "react"
-import { Menu } from "../../components"
-import "bootstrap/dist/css/bootstrap.min.css"
-import Button from "react-bootstrap/Button"
+import "./Home.css";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { Menu } from "../../components";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
 
 class Home extends React.Component {
   render() {
     return (
       <>
         <Menu />
-        <h2>Project Description</h2>
         <div id="projectDescriptionWrapper">
           <div id="projectDescription">
-            <div>This is just a placeholder description for now.</div>
-            <div>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              blandit lacus eget consectetur sollicitudin. Pellentesque ut
-              tincidunt ligula. Cras facilisis urna et pretium sodales. Nulla
-              tortor nisi, laoreet at enim at, venenatis accumsan dolor.
-              Praesent viverra magna non turpis finibus, vel finibus leo
-              tincidunt. Donec accumsan justo tellus, a molestie arcu laoreet
-              eget. Vivamus tempus neque eu efficitur elementum. Suspendisse a
-              nisi ac felis auctor pretium ac eu quam. Suspendisse eu dui sit
-              amet ante iaculis condimentum. Nullam et dignissim velit.
-              Suspendisse dictum orci vitae libero consectetur elementum. Sed id
-              lacus quis quam aliquam semper non non elit. Sed id diam vitae leo
-              tincidunt euismod. Orci varius natoque penatibus et magnis dis
-              parturient montes, nascetur ridiculus mus. In eu neque quis odio
-              congue porttitor vel a ligula. Vestibulum est ante, suscipit sed
-              venenatis vitae, tristique ac augue. Sed eu laoreet sem. Vivamus
-              sit amet quam at purus fringilla blandit quis et augue. Etiam at
-              molestie diam. Pellentesque quis ex ante. Integer ac nunc ex.
-              Curabitur suscipit sapien vel turpis ullamcorper suscipit. Cras ut
-              elementum quam. Mauris luctus ac augue pretium efficitur. In eu
-              aliquam ante. Pellentesque facilisis urna vitae condimentum
-              mattis. Pellentesque justo odio, accumsan et urna eget, pulvinar
-              auctor turpis. Aliquam semper vel erat a fringilla. Vivamus
-              ultrices erat tortor, sed lacinia nibh blandit convallis. Integer
-              semper ex vel nisl feugiat varius. Vestibulum ante ipsum primis in
-              faucibus orci luctus et ultrices posuere cubilia Curae; Aenean
-              bibendum faucibus erat non eleifend. Nulla at eleifend turpis. Sed
-              mollis orci id mi mollis, vitae ullamcorper enim tempor. Fusce
-              eget quam at ex molestie semper. Donec vitae tempor lorem.
-              Curabitur laoreet tincidunt orci, a rhoncus ex condimentum non. Ut
-              euismod elementum hendrerit. Pellentesque habitant morbi tristique
-              senectus et netus et malesuada fames ac turpis egestas. Ut eu dui
-              turpis. Nunc feugiat, mi quis feugiat sagittis, lacus neque
-              sollicitudin erat, ultrices laoreet metus sapien auctor orci.
-            </div>
+            <p>
+              Welcome to the Mars Needs project website. In accordance with the
+              stated goal of The Mars Society to aid in the human exploration
+              and settlement of the planet Mars, the Mars Needs project seeks to
+              collect ideas for products and services that might contribute to
+              the long-term success of a future Mars colony.
+            </p>
+            <p>
+              Humanity’s strategy for expansion to the Red Planet can be summed
+              up in the phrase “arrive, survive, and thrive.” All of these are
+              critical components of the process, but most of our efforts to
+              this point have been focused on developing an efficient means of
+              travel to Mars. As we come closer to achieving this milestone with
+              initiatives from companies like SpaceX, we feel it is vital that
+              we begin to direct more attention towards the challenges of
+              surviving -- and thriving -- once we get there. We want our first
+              colony ship to Mars to be loaded with all the best humanity has to
+              offer, and the time for us to be developing those products and
+              services is now.
+            </p>
+            <p>
+              Our aim in collecting this information is to connect people who
+              have ideas with the industry professionals and investors who have
+              the power to make them happen, with the ultimate goal of securing
+              a brighter future for humanity on Mars.
+            </p>
+            <p>
+              Do you have an idea for a product or service that could help a
+              future Mars colony to survive and thrive? We’d love to hear it!
+              Submit your proposal and become part of humanity’s greatest
+              adventure yet!
+            </p>
           </div>
-          <Button id="submitButtonRedirect" variant="primary" size="lg">
-            Submit a Proposal
-          </Button>
+          <NavLink to="/proposal">
+            <Button id="submitButtonRedirect" variant="primary" size="lg">
+              Submit a Proposal
+            </Button>
+          </NavLink>
         </div>
       </>
-    )
+    );
   }
 }
 
-export default Home
+export default Home;
