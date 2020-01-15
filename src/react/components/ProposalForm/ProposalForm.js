@@ -301,31 +301,20 @@ class ProposalForm extends Component {
   onSubmit = e => {
     e.preventDefault()
 
-    // const data = {
-    //   name: this.state.name,
-    //   email: this.state.email,
-    //   proposal_title: this.state.proposal_title,
-    //   proposal_category: this.state.proposal_category,
-    //   proposal_details: this.state.proposal_details,
-    //   company: this.state.company,
-    //   industry: this.state.industry,
-    //   phone_number: this.state.phone_number,
-    //   website: this.state.website
-    // }
     const data = {
-      name: "Jason",
-      email: "is this working?",
-      proposal_title: "I hope it is",
-      proposal_category: "Please",
-      proposal_details: "A long listed detailed proposal",
-      company: "A Company",
-      industry: "An Industry",
-      phone_number: "8888888888",
-      website: "www.website.com"
+      name: this.state.name,
+      email: this.state.email,
+      proposal_title: this.state.proposal_title,
+      proposal_category: this.state.proposal_category,
+      proposal_details: this.state.proposal_details,
+      company: this.state.company,
+      industry: this.state.industry,
+      phone_number: this.state.phone_number,
+      website: this.state.website
     }
 
     axios
-      .post("localhost:8082/api/proposals", data)
+      .post("http://localhost:8082/api/proposals", data)
       .then(res => {
         this.setState({
           name: "",
@@ -338,11 +327,12 @@ class ProposalForm extends Component {
           phone_number: "",
           website: ""
         })
-        this.props.history.push("/")
-      })
-      .catch(err => {
+        console.log(this.state)
+    })
+    .catch(err => {
         console.log("Error in posting proposal!")
       })
+      
   }
 
   render() {
