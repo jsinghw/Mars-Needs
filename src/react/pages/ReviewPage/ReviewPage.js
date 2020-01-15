@@ -17,6 +17,14 @@ class ReviewPage extends React.Component {
     });
   };
 
+  // setData = () => {
+  //   this.setState({
+  //     button: this.button
+  //   });
+
+  //   console.log(this.state.button);
+  // };
+
   render() {
     const data = {
       columns: [
@@ -53,7 +61,7 @@ class ReviewPage extends React.Component {
           submissionDate: "2020-01-07",
           file: (
             <MDBBtn
-              title="Lorem"
+              button="0"
               className="purple"
               outline
               size="sm"
@@ -71,7 +79,7 @@ class ReviewPage extends React.Component {
           category: "Clothing",
           submissionDate: "2020-01-07",
           file: (
-            <MDBBtn className="purple" outline size="sm" onClick={this.toggle}>
+            <MDBBtn className="purple" outline size="sm">
               File
             </MDBBtn>
           )
@@ -181,8 +189,7 @@ class ReviewPage extends React.Component {
     return (
       <Container>
         <Menu />
-        <h1>Review Page</h1>
-        <Modal show={this.state.show} />
+        <Modal show={this.state.show} data={data} toggle={this.toggle} />
         <MDBDataTable striped bordered hover data={data} />
       </Container>
     );

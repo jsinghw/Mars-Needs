@@ -4,6 +4,11 @@ import Button from "react-bootstrap/Button";
 import "./ProposalModal.css";
 
 class ProposalModal extends React.Component {
+  showData = () => {
+    console.log("hi");
+    console.log(this.props.data);
+  };
+
   render() {
     if (!this.props.show) {
       return null;
@@ -31,6 +36,9 @@ class ProposalModal extends React.Component {
           <Modal.Footer>
             <Button variant="secondary" onClick={this.props.toggle}>
               Close
+            </Button>
+            <Button variant="secondary" onClick={this.showData}>
+              data
             </Button>
           </Modal.Footer>
         </Modal>
