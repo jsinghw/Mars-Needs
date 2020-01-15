@@ -7,6 +7,7 @@ class ProposalModal extends React.Component {
   showData = () => {
     console.log("hi");
     console.log(this.props.data);
+    console.log(this.props.data.rows);
   };
 
   render() {
@@ -17,12 +18,12 @@ class ProposalModal extends React.Component {
       <>
         <Modal size="lg" show={this.props.show}>
           <Modal.Header>
-            <Modal.Title>{this.props.number}</Modal.Title>
+            <Modal.Title>{this.props.data.rows[0].number}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>Title: {this.props.title}</p>
-            <p>Submission Date: {this.props.submissionDate}</p>
-            <p>Category: {this.props.category}</p>
+            <p>Title: {this.props.data.rows[0].title}</p>
+            <p>Submission Date: {this.props.data.rows[0].submissionDate}</p>
+            <p>Category: {this.props.data.rows[0].category}</p>
             <p>
               Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
