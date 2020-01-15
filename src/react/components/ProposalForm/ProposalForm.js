@@ -6,6 +6,8 @@ import Button from "react-bootstrap/Button"
 
 let yup = require("yup")
 
+
+
 class ProposalForm extends React.Component {
   render() {
     const schema = yup.object({
@@ -59,7 +61,7 @@ class ProposalForm extends React.Component {
                   isValid={touched.name && !errors.name}
                   as={Form.Control}
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback></Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">
                   {errors.name}
                 </Form.Control.Feedback>
@@ -78,7 +80,7 @@ class ProposalForm extends React.Component {
                     isValid={touched.email && !errors.email}
                     as={Form.Control}
                   />
-                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                  <Form.Control.Feedback></Form.Control.Feedback>
                   <Form.Control.Feedback type="invalid">
                     {errors.email}
                   </Form.Control.Feedback>
@@ -93,7 +95,7 @@ class ProposalForm extends React.Component {
                   isValid={touched.company && !errors.company}
                   as={Form.Control}
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback></Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={"Col"} md="4" controlId="validationFormik04">
                 <Form.Control
@@ -109,7 +111,7 @@ class ProposalForm extends React.Component {
                   <option>Agriculture</option>
                   <option>Technology</option>
                 </Form.Control>
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback></Form.Control.Feedback>
               </Form.Group>
             </Form.Row>
             <Form.Row>
@@ -123,7 +125,7 @@ class ProposalForm extends React.Component {
                   isInvalid={!!errors.phoneNumber}
                   as={Form.Control}
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback></Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">
                   {errors.phoneNumber}
                 </Form.Control.Feedback>
@@ -138,7 +140,7 @@ class ProposalForm extends React.Component {
                   isInvalid={!!errors.website}
                   as={Form.Control}
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback></Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">
                   {errors.website}
                 </Form.Control.Feedback>
@@ -175,7 +177,7 @@ class ProposalForm extends React.Component {
                   <option value="Agriculture">Agriculture</option>
                   <option value="Technology">Technology</option>
                 </Form.Control>
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback></Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">
                   {errors.proposalCategory}
                 </Form.Control.Feedback>
@@ -194,7 +196,7 @@ class ProposalForm extends React.Component {
                 as="textarea"
                 rows="10"
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback></Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
                 {errors.proposalDetails}
               </Form.Control.Feedback>

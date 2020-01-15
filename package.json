@@ -8,6 +8,8 @@
     "connected-react-router": "^6.6.1",
     "formik": "^2.1.1",
     "history": "^4.10.1",
+    "mongodb": "^3.5.0",
+    "mongoose": "^5.8.7",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
