@@ -4,6 +4,7 @@
   "homepage": "https://benzie.gitlab.io/mars-needs",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.1",
     "bootstrap": "^4.4.1",
     "connected-react-router": "^6.6.1",
     "formik": "^2.1.1",

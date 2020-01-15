@@ -7,11 +7,11 @@ const initialState = {
   error: null
 }
 
-const PostProposal = (state = initialState, action) => {
+const postProposal = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state
   }
 }
 
-export default withAsyncReducer(POSTPROPOSAL, PostProposal)
+export default withAsyncReducer(POSTPROPOSAL, postProposal)
