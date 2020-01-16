@@ -28,7 +28,7 @@ class ReviewPage extends React.Component {
       .then(response => {
         //console.log(response);
         this.setState({ rows: response.data });
-        //console.log(this.state.rows);
+        console.log(this.state.rows);
       })
       .catch(function(error) {
         console.log(error);
@@ -39,6 +39,24 @@ class ReviewPage extends React.Component {
     this.setState({
       show: !this.state.show
     });
+    console.log(this.state);
+  };
+
+  updateModal = rowIndex => {
+    this.setState({
+      name: this.state.rows[rowIndex].name,
+      email: this.state.rows[rowIndex].email,
+      proposal_title: this.state.rows[rowIndex].proposal_title,
+      proposal_category: this.state.rows[rowIndex].proposal_category,
+      proposal_details: this.state.rows[rowIndex].proposal_details,
+      company: this.state.rows[rowIndex].company,
+      industry: this.state.rows[rowIndex].industry,
+      phone_number: this.state.rows[rowIndex].phone_number,
+      website: this.state.rows[rowIndex].website
+    });
+
+    //console.log(rowIndex);
+    //console.log(this.state.rows[rowIndex].name);
   };
 
   render() {
@@ -73,7 +91,7 @@ class ReviewPage extends React.Component {
     };
 
     this.state.rows.map(function(row, i) {
-      console.log(row);
+      //console.log(row);
       return data.rows.push({
         number: row._id,
         title: row.proposal_title,
@@ -83,14 +101,15 @@ class ReviewPage extends React.Component {
     });
 
     for (let i = 0; i < data.rows.length; i++) {
-      console.log(data.rows[i]);
-
+      //console.log(data.rows[i]);
       data.rows[i].file = (
         <MDBBtn
           className="purple"
           outline
           size="sm"
           onClick={e => {
+            //console.log(i);
+            this.updateModal(i);
             this.toggle();
           }}
         >
@@ -99,21 +118,11 @@ class ReviewPage extends React.Component {
       );
     }
 
-    console.log(data);
+    //console.log(data);
     return (
       <Container>
         <Menu />
         <Modal show={this.state.show} data={data} toggle={this.toggle} />
-        <MDBBtn
-          className="purple"
-          outline
-          size="sm"
-          onClick={e => {
-            this.toggle();
-          }}
-        >
-          Button
-        </MDBBtn>
         <MDBDataTable striped bordered hover data={data} />
       </Container>
     );
