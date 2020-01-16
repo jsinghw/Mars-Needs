@@ -1,5 +1,5 @@
-export const domain = "https://mars-needs.herokuapp.com";
-//export const domain = "http://localhost:3000";
+// export const domain = "https://mars-needs.herokuapp.com";
+export const domain = "http://localhost:8082";
 
 export const jsonHeaders = {
   "Content-Type": "application/json",
