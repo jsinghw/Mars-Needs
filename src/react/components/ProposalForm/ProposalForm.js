@@ -254,7 +254,7 @@ class ProposalForm extends Component {
                 required
                 controlId="validate10"
                 name="terms"
-                label="Agree to terms and conditions"
+                label="I agree to the terms and conditions"
                 // onChange={e => {
                 //   this.props.handleChange(e)
                 //   this.handleCheckBox(e)
