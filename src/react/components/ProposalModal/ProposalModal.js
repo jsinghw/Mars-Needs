@@ -21,7 +21,9 @@ class ProposalModal extends React.Component {
             <p>Name: {this.props.name}</p>
             <p>E-mail: {this.props.email}</p>
             <p>Phone: {this.props.phone_number}</p>
-            <p>Website: {this.props.website}</p>
+            <p>
+              Website: <a href={this.props.website}>{this.props.website}</a>
+            </p>
             <p>Company: {this.props.company}</p>
             <p>Industry: {this.props.industry}</p>
             <p>
