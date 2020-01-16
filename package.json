@@ -9,6 +9,8 @@
     "connected-react-router": "^6.6.1",
     "formik": "^2.1.1",
     "history": "^4.10.1",
+    "mdbootstrap": "^4.11.0",
+    "mdbreact": "^4.24.0",
     "mongodb": "^3.5.0",
     "mongoose": "^5.8.7",
     "react": "^16.12.0",
