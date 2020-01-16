@@ -19,6 +19,13 @@ class Menu extends React.Component {
         <a href="https://www.marssociety.org/" target="new">
           The Mars Society
         </a>
+        <form>
+          <input type="text" size="10" placeholder="User Name"></input>
+          <input type="password" size="10" placeholder="Password"></input>
+          <button type="submit">
+            <NavLink to="/review">Log In</NavLink>
+          </button>
+        </form>
       </div>
     );
   }
