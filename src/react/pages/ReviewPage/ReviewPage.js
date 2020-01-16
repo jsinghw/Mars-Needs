@@ -26,9 +26,9 @@ class ReviewPage extends React.Component {
     axios
       .get("http://localhost:8082/api/proposals")
       .then(response => {
-        console.log(response);
+        //console.log(response);
         this.setState({ rows: response.data });
-        console.log(this.state.rows);
+        //console.log(this.state.rows);
       })
       .catch(function(error) {
         console.log(error);
@@ -42,7 +42,6 @@ class ReviewPage extends React.Component {
   };
 
   render() {
-    console.log(this.state.rows);
     const data = {
       columns: [
         {
@@ -83,10 +82,38 @@ class ReviewPage extends React.Component {
       });
     });
 
+    for (let i = 0; i < data.rows.length; i++) {
+      console.log(data.rows[i]);
+
+      data.rows[i].file = (
+        <MDBBtn
+          className="purple"
+          outline
+          size="sm"
+          onClick={e => {
+            this.toggle();
+          }}
+        >
+          Button
+        </MDBBtn>
+      );
+    }
+
+    console.log(data);
     return (
       <Container>
         <Menu />
         <Modal show={this.state.show} data={data} toggle={this.toggle} />
+        <MDBBtn
+          className="purple"
+          outline
+          size="sm"
+          onClick={e => {
+            this.toggle();
+          }}
+        >
+          Button
+        </MDBBtn>
         <MDBDataTable striped bordered hover data={data} />
       </Container>
     );
