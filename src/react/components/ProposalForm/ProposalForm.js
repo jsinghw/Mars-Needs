@@ -275,8 +275,8 @@
 // export default(ProposalForm)
 
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
 import axios from "axios"
+import "./ProposalForm.css"
 
 class ProposalForm extends Component {
   constructor() {
@@ -327,7 +327,7 @@ class ProposalForm extends Component {
           phone_number: "",
           website: ""
         })
-        console.log(this.state)
+        console.log(this.props.history)
     })
     .catch(err => {
         console.log("Error in posting proposal!")
@@ -341,14 +341,8 @@ class ProposalForm extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <br />
-              <Link to="/" className="btn btn-outline-warning float-left">
-                Show BooK List
-              </Link>
-            </div>
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Add Book</h1>
-              <p className="lead text-center">Create new book</p>
+              <h1 className="display-4 text-center">Proposal</h1>
+              <br></br>
 
               <form noValidate onSubmit={this.onSubmit}>
                 <div className="form-group">

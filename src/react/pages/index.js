@@ -8,6 +8,6 @@ export default {
   Home: { path: "/", component: Home },
   Proposal: { path: "/proposal", component: Proposal },
   ReviewPage: { path: "/reviewpage", component: ReviewPage },
-  //NextSteps: { path: "/next-steps", component: NextSteps},
+  NextSteps: { path: "/next-steps", component: NextSteps},
   NotFound: { path: "*", component: NotFound }
 };
