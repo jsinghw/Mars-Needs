@@ -278,6 +278,7 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import "./ProposalForm.css"
+import { HeroImage } from "../HeroImage"
 
 class ProposalForm extends Component {
   constructor() {
@@ -338,6 +339,8 @@ class ProposalForm extends Component {
 
   render() {
     return (
+      <React.Fragment>
+        <HeroImage/>
       <div className="CreateBook">
         <div className="container">
           <div className="row">
@@ -450,6 +453,7 @@ class ProposalForm extends Component {
           </div>
         </div>
       </div>
+      </React.Fragment>
     )
   }
 }
