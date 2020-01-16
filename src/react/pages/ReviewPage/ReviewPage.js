@@ -3,7 +3,7 @@ import { Menu } from "../../components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 import { MDBDataTable, MDBBtn } from "mdbreact";
-import { Modal } from "../../components";
+import { ProposalModal } from "../../components";
 import "./ReviewPage.css";
 import axios from "axios";
 
@@ -124,7 +124,7 @@ class ReviewPage extends React.Component {
     return (
       <Container>
         <Menu />
-        <Modal
+        <ProposalModal
           show={this.state.show}
           toggle={this.toggle}
           _id={this.state._id}
