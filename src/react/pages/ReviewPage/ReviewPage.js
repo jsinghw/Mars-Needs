@@ -29,7 +29,7 @@ class ReviewPage extends React.Component {
       .then(response => {
         //console.log(response);
         this.setState({ rows: response.data });
-        console.log(this.state.rows);
+        //console.log(this.state.rows);
       })
       .catch(function(error) {
         console.log(error);
@@ -40,7 +40,7 @@ class ReviewPage extends React.Component {
     this.setState({
       show: !this.state.show
     });
-    console.log(this.state);
+    //console.log(this.state);
   };
 
   updateModal = rowIndex => {
