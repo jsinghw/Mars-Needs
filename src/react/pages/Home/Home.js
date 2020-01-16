@@ -15,11 +15,11 @@ class Home extends React.Component {
         <div id="projectDescriptionWrapper">
           <div id="projectDescription">
             <p>
-              Welcome to the Mars Needs project website. In accordance with the
-              stated goal of The Mars Society to aid in the human exploration
-              and settlement of the planet Mars, the Mars Needs project seeks to
-              collect ideas for products and services that might contribute to
-              the long-term success of a future Mars colony.
+              Welcome to the Mars Needs Proposals project website. In accordance
+              with the stated goal of The Mars Society to aid in the human
+              exploration and settlement of the planet Mars, the Mars Needs
+              project seeks to collect ideas for products and services that
+              might contribute to the long-term success of a future Mars colony.
             </p>
             <p>
               Humanity’s strategy for expansion to the Red Planet can be summed
@@ -37,8 +37,8 @@ class Home extends React.Component {
             <p>
               Our aim in collecting this information is to connect people who
               have ideas with the industry professionals and investors who have
-              the power to make them happen, with the ultimate goal of securing
-              a brighter future for humanity on Mars.
+              the resources to make them happen, with the ultimate goal of
+              securing a brighter future for humanity on Mars.
             </p>
             <p>
               Do you have an idea for a product or service that could help a
