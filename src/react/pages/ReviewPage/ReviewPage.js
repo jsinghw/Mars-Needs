@@ -11,6 +11,7 @@ class ReviewPage extends React.Component {
   state = {
     show: false,
     rows: [],
+    _id: "",
     name: "",
     email: "",
     proposal_title: "",
@@ -44,6 +45,7 @@ class ReviewPage extends React.Component {
 
   updateModal = rowIndex => {
     this.setState({
+      _id: this.state.rows[rowIndex]._id,
       name: this.state.rows[rowIndex].name,
       email: this.state.rows[rowIndex].email,
       proposal_title: this.state.rows[rowIndex].proposal_title,
@@ -122,7 +124,20 @@ class ReviewPage extends React.Component {
     return (
       <Container>
         <Menu />
-        <Modal show={this.state.show} data={data} toggle={this.toggle} />
+        <Modal
+          show={this.state.show}
+          toggle={this.toggle}
+          _id={this.state._id}
+          name={this.state.name}
+          email={this.state.email}
+          proposal_title={this.state.proposal_title}
+          proposal_category={this.state.proposal_category}
+          proposal_details={this.state.proposal_details}
+          company={this.state.company}
+          industry={this.state.industry}
+          phone_number={this.state.phone_number}
+          website={this.state.website}
+        />
         <MDBDataTable striped bordered hover data={data} />
       </Container>
     );
