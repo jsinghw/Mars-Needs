@@ -4,12 +4,14 @@ import { NavLink } from "react-router-dom";
 import { Menu } from "../../components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
+import { HeroImage } from "../../components/HeroImage";
 
 class Home extends React.Component {
   render() {
     return (
       <>
         <Menu />
+        <HeroImage></HeroImage>
         <div id="projectDescriptionWrapper">
           <div id="projectDescription">
             <p>

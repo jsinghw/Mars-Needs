@@ -1,28 +1,29 @@
-import React, { Component } from "react"
-import Form from "react-bootstrap/Form"
-import Button from "react-bootstrap/Button"
-import { Formik } from "formik"
-import axios from "axios"
-import { history }  from "../../../redux"
-import "./ProposalForm.css"
+import React, { Component } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import { Formik } from "formik";
+import axios from "axios";
+import { history } from "../../../redux";
+import "./ProposalForm.css";
+import { HeroImage } from "../HeroImage";
 
 class ProposalForm extends Component {
   onSubmit(values) {
     axios
       .post("http://localhost:8082/api/proposals", values)
       .then(res => {
-        console.log(this.props.history)
+        console.log(this.props.history);
       })
       .catch(err => {
-        console.log("Error in posting proposal!")
-      })
+        console.log("Error in posting proposal!");
+      });
   }
 
   render() {
-    let yup = require("yup")
-    const invalidEmail = "Invalid email"
-    const nameNotLongEnough = "Name must be as least 2 characters long"
-    const emailNotLongEnough = "Email must be as least 3 characters long"
+    let yup = require("yup");
+    const invalidEmail = "Invalid email";
+    const nameNotLongEnough = "Name must be as least 2 characters long";
+    const emailNotLongEnough = "Email must be as least 3 characters long";
 
     const schema = yup.object().shape({
       name: yup
@@ -42,16 +43,16 @@ class ProposalForm extends Component {
       company: yup.string(),
       industry: yup.string(),
       phone_number: yup.string(),
-      website: yup.string().url(),
+      website: yup.string().url()
       //terms: yup.bool().oneOf([true])
-    })
+    });
     return (
       <Formik
         validationSchema={schema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
-          setSubmitting(true)
-          this.onSubmit(values)
-          history.push("/next-steps")
+          setSubmitting(true);
+          this.onSubmit(values);
+          history.push("/next-steps");
         }}
         initialValues={{
           name: "",
@@ -269,8 +270,8 @@ class ProposalForm extends Component {
           </Form>
         )}
       </Formik>
-    )
+    );
   }
 }
 
-export default ProposalForm
+export default ProposalForm;
