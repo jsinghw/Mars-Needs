@@ -1,8 +1,7 @@
-import React from "react"
+import React from "react";
 // import "bootstrap/dist/css/bootstrap.min.css"
-import "./Proposal.css"
-import { Menu } from "../../components"
-import ProposalForm from "../../components/ProposalForm/ProposalForm"
+import "./Proposal.css";
+import { Menu, ProposalForm } from "../../components";
 
 class Proposal extends React.Component {
   render() {
@@ -13,7 +12,7 @@ class Proposal extends React.Component {
           <ProposalForm />
         </div>
       </>
-    )
+    );
   }
 }
-export default Proposal
+export default Proposal;
