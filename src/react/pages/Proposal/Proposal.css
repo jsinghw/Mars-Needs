@@ -1,8 +1,10 @@
 #formContainer {
-    margin: 0px 15px;
+    margin: 15px 15px 0px 15px;
     border: 1px solid black;
     padding: 10px;
+    text-align: center;
 }
-form {
-    
+#proposalHeader{
+    margin-top: 10px;
+    text-align: center;
 }

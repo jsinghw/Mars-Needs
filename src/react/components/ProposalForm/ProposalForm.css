@@ -1,0 +1,13 @@
+#innerFormContainer {
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+#leftSide {
+width: 200px;
+margin: 8px;
+}
+#rightSide {
+width: 60%;
+margin: 8px;
+}

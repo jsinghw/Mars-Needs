@@ -274,49 +274,253 @@
 
 // export default(ProposalForm)
 
+// import React, { Component } from "react"
+// import axios from "axios"
+// import "./ProposalForm.css"
+
+// class ProposalForm extends Component {
+//   constructor() {
+//     super()
+//     this.state = {
+//       name: "",
+//       email: "",
+//       proposal_title: "",
+//       proposal_category: "",
+//       proposal_details: "",
+//       company: "",
+//       industry: "",
+//       phone_number: "",
+//       website: ""
+//     }
+//   }
+
+//   onChange = e => {
+//     this.setState({ [e.target.name]: e.target.value })
+//   }
+
+//   onSubmit = e => {
+//     e.preventDefault()
+
+//     const data = {
+//       name: this.state.name,
+//       email: this.state.email,
+//       proposal_title: this.state.proposal_title,
+//       proposal_category: this.state.proposal_category,
+//       proposal_details: this.state.proposal_details,
+//       company: this.state.company,
+//       industry: this.state.industry,
+//       phone_number: this.state.phone_number,
+//       website: this.state.website
+//     }
+
+//     axios
+//       .post("http://localhost:8082/api/proposals", data)
+//       .then(res => {
+//         this.setState({
+//           name: "",
+//           email: "",
+//           proposal_title: "",
+//           proposal_category: "",
+//           proposal_details: "",
+//           company: "",
+//           industry: "",
+//           phone_number: "",
+//           website: ""
+//         })
+//         console.log(this.props.history)
+//     })
+//     .catch(err => {
+//         console.log("Error in posting proposal!")
+//       })
+
+//   }
+
+//   render() {
+//     return (
+//       <div className="CreateBook">
+//         <div className="container">
+//           <div className="row">
+//             <div className="col-md-8 m-auto">
+//               <h1 className="display-4 text-center">Proposal</h1>
+//               <br></br>
+
+//               <form noValidate onSubmit={this.onSubmit}>
+//                 <div className="form-group">
+//                   <input
+//                     type="text"
+//                     placeholder="Name"
+//                     name="name"
+//                     className="form-control"
+//                     value={this.state.name}
+//                     onChange={this.onChange}
+//                   />
+//                 </div>
+
+//                 <div className="form-group">
+//                   <input
+//                     type="text"
+//                     placeholder="Email"
+//                     name="email"
+//                     className="form-control"
+//                     value={this.state.email}
+//                     onChange={this.onChange}
+//                   />
+//                 </div>
+
+//                 <div className="form-group">
+//                   <input
+//                     type="text"
+//                     placeholder="Company Name"
+//                     name="company"
+//                     className="form-control"
+//                     value={this.state.company}
+//                     onChange={this.onChange}
+//                   />
+//                 </div>
+
+//                 <div className="form-group">
+//                   <input
+//                     type="text"
+//                     placeholder="Industry"
+//                     name="industry"
+//                     className="form-control"
+//                     value={this.state.industry}
+//                     onChange={this.onChange}
+//                   />
+//                 </div>
+
+//                 <div className="form-group">
+//                   <input
+//                     type="text"
+//                     placeholder="Phone Number"
+//                     name="phone_number"
+//                     className="form-control"
+//                     value={this.state.phone_number}
+//                     onChange={this.onChange}
+//                   />
+//                 </div>
+//                 <div className="form-group">
+//                   <input
+//                     type="text"
+//                     placeholder="Website"
+//                     name="website"
+//                     className="form-control"
+//                     value={this.state.website}
+//                     onChange={this.onChange}
+//                   />
+//                 </div>
+//                 <div className="form-group">
+//                   <input
+//                     type="text"
+//                     placeholder="Proposal Title"
+//                     name="proposal_title"
+//                     className="form-control"
+//                     value={this.state.proposal_title}
+//                     onChange={this.onChange}
+//                   />
+//                 </div>
+//                 <div className="form-group">
+//                   <input
+//                     type="text"
+//                     placeholder="Proposal Category"
+//                     name="proposal_category"
+//                     className="form-control"
+//                     value={this.state.proposal_category}
+//                     onChange={this.onChange}
+//                   />
+//                 </div>
+//                 <div className="form-group">
+//                   <input
+//                     type="text"
+//                     placeholder="Proposal Details"
+//                     name="proposal_details"
+//                     className="form-control"
+//                     value={this.state.proposal_details}
+//                     onChange={this.onChange}
+//                   />
+//                 </div>
+//                 <div className="form-group">
+//                   <input
+//                     type="checkbox"
+//                     name="terms"
+//                     className="form-control"
+//                     value={this.state.terms}
+//                     onChange={this.onChange}
+//                   />
+//                   <span>I </span>
+//                 </div>
+
+//                 <input
+//                   type="submit"
+//                   className="btn btn-outline-warning btn-block mt-4"
+//                 />
+//               </form>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     )
+//   }
+// }
+
+// export default ProposalForm
+
 import React, { Component } from "react"
+import Form from "react-bootstrap/Form"
+import Button from "react-bootstrap/Button"
+import { Formik, Field } from "formik"
 import axios from "axios"
+// import history  from "../../../redux"
 import "./ProposalForm.css"
 
 class ProposalForm extends Component {
-  constructor() {
-    super()
-    this.state = {
-      name: "",
-      email: "",
-      proposal_title: "",
-      proposal_category: "",
-      proposal_details: "",
-      company: "",
-      industry: "",
-      phone_number: "",
-      website: ""
-    }
-  }
-
-  onChange = e => {
-    this.setState({ [e.target.name]: e.target.value })
-  }
-
-  onSubmit = e => {
-    e.preventDefault()
-
-    const data = {
-      name: this.state.name,
-      email: this.state.email,
-      proposal_title: this.state.proposal_title,
-      proposal_category: this.state.proposal_category,
-      proposal_details: this.state.proposal_details,
-      company: this.state.company,
-      industry: this.state.industry,
-      phone_number: this.state.phone_number,
-      website: this.state.website
-    }
-
+  onSubmit(values) {
     axios
-      .post("http://localhost:8082/api/proposals", data)
+      .post("http://localhost:8082/api/proposals", values)
       .then(res => {
-        this.setState({
+        console.log(this.props.history)
+      })
+      .catch(err => {
+        console.log("Error in posting proposal!")
+      })
+  }
+
+  render() {
+    let yup = require("yup")
+    const invalidEmail = "Invalid email"
+    const nameNotLongEnough = "Name must be as least 2 characters long"
+    const emailNotLongEnough = "Email must be as least 3 characters long"
+
+    const schema = yup.object().shape({
+      name: yup
+        .string()
+        .min(2, nameNotLongEnough)
+        .max(100)
+        .required(),
+      email: yup
+        .string()
+        .email(invalidEmail)
+        .min(3, emailNotLongEnough)
+        .max(255)
+        .required(),
+      proposal_title: yup.string().required(),
+      proposal_category: yup.string().required(),
+      proposal_details: yup.string().required(),
+      company: yup.string(),
+      industry: yup.string(),
+      phone_number: yup.string(),
+      website: yup.string().url(),
+      terms: yup.bool().required()
+    })
+    return (
+      <Formik
+        validationSchema={schema}
+        onSubmit={(values, { setSubmitting, resetForm }) => {
+          setSubmitting(true)
+          this.onSubmit(values)
+          //history.push("./next-steps")
+        }}
+        initialValues={{
           name: "",
           email: "",
           proposal_title: "",
@@ -326,129 +530,208 @@ class ProposalForm extends Component {
           industry: "",
           phone_number: "",
           website: ""
-        })
-        console.log(this.props.history)
-    })
-    .catch(err => {
-        console.log("Error in posting proposal!")
-      })
-      
-  }
-
-  render() {
-    return (
-      <div className="CreateBook">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Proposal</h1>
-              <br></br>
-
-              <form noValidate onSubmit={this.onSubmit}>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    name="name"
-                    className="form-control"
-                    value={this.state.name}
-                    onChange={this.onChange}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <input
-                    type="text"
-                    placeholder="Email"
-                    name="email"
-                    className="form-control"
-                    value={this.state.email}
-                    onChange={this.onChange}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <input
-                    type="text"
-                    placeholder="Company Name"
-                    name="company"
-                    className="form-control"
-                    value={this.state.company}
-                    onChange={this.onChange}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <input
-                    type="text"
-                    placeholder="Industry"
-                    name="industry"
-                    className="form-control"
-                    value={this.state.industry}
-                    onChange={this.onChange}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <input
-                    type="text"
-                    placeholder="Phone Number"
-                    name="phone_number"
-                    className="form-control"
-                    value={this.state.phone_number}
-                    onChange={this.onChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    placeholder="Website"
-                    name="website"
-                    className="form-control"
-                    value={this.state.website}
-                    onChange={this.onChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    placeholder="Proposal Title"
-                    name="proposal_title"
-                    className="form-control"
-                    value={this.state.proposal_title}
-                    onChange={this.onChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    placeholder="Proposal Category"
-                    name="proposal_category"
-                    className="form-control"
-                    value={this.state.proposal_category}
-                    onChange={this.onChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    placeholder="Proposal Details"
+        }}
+      >
+        {({
+          handleSubmit,
+          isSubmitting,
+          handleChange,
+          validateOnChange,
+          handleBlur,
+          values,
+          touched,
+          isValid,
+          errors
+        }) => (
+          <Form noValidate onSubmit={handleSubmit}>
+            <div id="innerFormContainer">
+              <div id="leftSide">
+                <Form.Row>
+                  <Form.Group controlId="validate01">
+                    <Form.Control
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      value={values.name}
+                      onChange={handleChange}
+                      isValid={touched.name && !errors.name}
+                      isInvalid={!!errors.name}
+                    />
+                    <Form.Control.Feedback></Form.Control.Feedback>
+                    <Form.Control.Feedback type="invalid">
+                      {errors.name}
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Group controlId="validate02">
+                    <Form.Control
+                      type="text"
+                      name="email"
+                      placeholder="Email"
+                      value={values.email}
+                      onChange={handleChange}
+                      isValid={touched.email && !errors.email}
+                      isInvalid={!!errors.email}
+                    />
+                    <Form.Control.Feedback></Form.Control.Feedback>
+                    <Form.Control.Feedback type="invalid">
+                      {errors.email}
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Group controlId="validate03">
+                    <Form.Control
+                      type="text"
+                      name="company"
+                      placeholder="Company Name"
+                      value={values.company}
+                      onChange={handleChange}
+                      isValid={touched.company && !errors.company}
+                      isInvalid={!!errors.company}
+                    />
+                    <Form.Control.Feedback></Form.Control.Feedback>
+                    <Form.Control.Feedback type="invalid">
+                      {errors.company}
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Group controlId="validate04">
+                    <Form.Control
+                      name="industry"
+                      type="text"
+                      values={values.industry}
+                      placeholder="Industry"
+                      onChange={handleChange}
+                      isValid={touched.industry && !errors.industry}
+                      as="select"
+                    >
+                      <option>Select an Industry</option>
+                      <option>Agriculture</option>
+                      <option>Technology</option>
+                    </Form.Control>
+                    <Form.Control.Feedback></Form.Control.Feedback>
+                    <Form.Control.Feedback type="invalid">
+                      {errors.industry}
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Group controlId="validate05">
+                    <Form.Control
+                      type="text"
+                      name="phone_number"
+                      placeholder="Phone Number"
+                      value={values.phone_number}
+                      onChange={handleChange}
+                      isValid={touched.phone_number && !errors.phone_number}
+                      isInvalid={!!errors.phone_number}
+                    />
+                    <Form.Control.Feedback></Form.Control.Feedback>
+                    <Form.Control.Feedback type="invalid">
+                      {errors.phone_number}
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Group controlId="validate06">
+                    <Form.Control
+                      type="text"
+                      name="website"
+                      placeholder="Website"
+                      value={values.website}
+                      onChange={handleChange}
+                      isValid={touched.website && !errors.website}
+                      isInvalid={!!errors.website}
+                    />
+                    <Form.Control.Feedback></Form.Control.Feedback>
+                    <Form.Control.Feedback type="invalid">
+                      {errors.website}
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                </Form.Row>
+              </div>
+              <div id="rightSide">
+                <Form.Row>
+                  <Form.Group as="block" md="6" controlId="validate07">
+                    <Form.Control
+                      type="text"
+                      name="proposal_title"
+                      placeholder="Proposal Title"
+                      value={values.proposal_title}
+                      onChange={handleChange}
+                      isValid={touched.proposal_title && !errors.proposal_title}
+                      isInvalid={!!errors.proposal_title}
+                    />
+                    <Form.Control.Feedback></Form.Control.Feedback>
+                    <Form.Control.Feedback type="invalid">
+                      {errors.proposal_title}
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                  <Form.Group as="Col" controlId="validate08">
+                    <Form.Control
+                      name="proposal_category"
+                      type="text"
+                      values={values.proposal_category}
+                      placeholder="proposal_category"
+                      onChange={handleChange}
+                      isValid={
+                        touched.proposal_category && !errors.proposal_category
+                      }
+                      isInvalid={!!errors.proposal_category}
+                      as="select"
+                    >
+                      <option>Select a Proposal Category</option>
+                      <option value="Agriculture">Agriculture</option>
+                      <option value="Technology">Technology</option>
+                    </Form.Control>
+                    <Form.Control.Feedback></Form.Control.Feedback>
+                    <Form.Control.Feedback type="invalid">
+                      {errors.proposal_category}
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Control controlId="validate09"
                     name="proposal_details"
-                    className="form-control"
-                    value={this.state.proposal_details}
-                    onChange={this.onChange}
+                    type="text"
+                    values={values.proposal_details}
+                    placeholder="Proposal Details"
+                    onChange={handleChange}
+                    isValid={
+                      touched.proposal_details && !errors.proposal_details
+                    }
+                    isInvalid={!!errors.proposal_details}
+                    as="textarea"
+                    rows="10"
                   />
-                </div>
-
-                <input
-                  type="submit"
-                  className="btn btn-outline-warning btn-block mt-4"
-                />
-              </form>
+                  <Form.Control.Feedback></Form.Control.Feedback>
+                  <Form.Control.Feedback type="invalid">
+                    {errors.proposal_details}
+                  </Form.Control.Feedback>
+                </Form.Row>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
+            {/* <Form.Group controlId="validate10">
+              <Field
+                required
+                name="terms"
+                label="Agree to terms and conditions"
+                onChange={handleChange}
+                isValid={touched.terms && !errors.terms}
+                isInvalid={!!errors.terms}
+                feedback={errors.terms}
+                as ={Form.Check}
+              />
+            </Form.Group> */}
+            <Button size="lg" type="submit" disabled={isSubmitting}>
+              Submit
+            </Button>
+          </Form>
+        )}
+      </Formik>
     )
   }
 }
