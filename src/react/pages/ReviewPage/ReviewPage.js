@@ -98,7 +98,7 @@ class ReviewPage extends React.Component {
         number: row._id,
         title: row.proposal_title,
         category: row.proposal_category,
-        submissionDate: "need a date"
+        submissionDate: "1/3/2020"
       });
     });
 
@@ -115,7 +115,7 @@ class ReviewPage extends React.Component {
             this.toggle();
           }}
         >
-          Button
+          View
         </MDBBtn>
       );
     }
