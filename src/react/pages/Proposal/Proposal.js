@@ -9,7 +9,6 @@ class Proposal extends React.Component {
     return (
       <>
         <Menu />
-        <h2>Submit Proposal Page</h2>
         <div id="formContainer">
           <ProposalForm />
         </div>
