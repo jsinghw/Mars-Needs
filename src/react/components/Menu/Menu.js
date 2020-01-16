@@ -1,7 +1,7 @@
 import React from "react";
-import { NavLink } from ".";
+import { NavLink } from "..";
 import "./Menu.css";
-import { withAsyncAction, connect } from "../HOCs";
+import { withAsyncAction, connect } from "../../HOCs";
 
 class Menu extends React.Component {
   handleLogout = event => {
