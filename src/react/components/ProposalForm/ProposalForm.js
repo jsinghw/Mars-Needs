@@ -468,9 +468,9 @@
 import React, { Component } from "react"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
-import { Formik, Field } from "formik"
+import { Formik } from "formik"
 import axios from "axios"
-// import history  from "../../../redux"
+import { history }  from "../../../redux"
 import "./ProposalForm.css"
 
 class ProposalForm extends Component {
@@ -510,7 +510,7 @@ class ProposalForm extends Component {
       industry: yup.string(),
       phone_number: yup.string(),
       website: yup.string().url(),
-      terms: yup.bool().required()
+      //terms: yup.bool().oneOf([true])
     })
     return (
       <Formik
@@ -518,7 +518,7 @@ class ProposalForm extends Component {
         onSubmit={(values, { setSubmitting, resetForm }) => {
           setSubmitting(true)
           this.onSubmit(values)
-          //history.push("./next-steps")
+          history.push("/next-steps")
         }}
         initialValues={{
           name: "",
@@ -559,7 +559,7 @@ class ProposalForm extends Component {
                     />
                     <Form.Control.Feedback></Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid">
-                      {errors.name}
+                      Name is a required field
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Form.Row>
@@ -576,7 +576,7 @@ class ProposalForm extends Component {
                     />
                     <Form.Control.Feedback></Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid">
-                      {errors.email}
+                      Email is a required field
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Form.Row>
@@ -667,7 +667,7 @@ class ProposalForm extends Component {
                     />
                     <Form.Control.Feedback></Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid">
-                      {errors.proposal_title}
+                      Proposal title is a required field
                     </Form.Control.Feedback>
                   </Form.Group>
                   <Form.Group as="Col" controlId="validate08">
@@ -689,12 +689,13 @@ class ProposalForm extends Component {
                     </Form.Control>
                     <Form.Control.Feedback></Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid">
-                      {errors.proposal_category}
+                      Proposal category is a required field
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Form.Row>
                 <Form.Row>
-                  <Form.Control controlId="validate09"
+                  <Form.Control
+                    controlId="validate09"
                     name="proposal_details"
                     type="text"
                     values={values.proposal_details}
@@ -709,23 +710,26 @@ class ProposalForm extends Component {
                   />
                   <Form.Control.Feedback></Form.Control.Feedback>
                   <Form.Control.Feedback type="invalid">
-                    {errors.proposal_details}
+                    Proposal details is a required field
                   </Form.Control.Feedback>
                 </Form.Row>
               </div>
             </div>
-            {/* <Form.Group controlId="validate10">
-              <Field
+            <Form.Group>
+              <Form.Check
                 required
+                controlId="validate10"
                 name="terms"
                 label="Agree to terms and conditions"
-                onChange={handleChange}
+                // onChange={e => {
+                //   this.props.handleChange(e)
+                //   this.handleCheckBox(e)
+                // }}
                 isValid={touched.terms && !errors.terms}
                 isInvalid={!!errors.terms}
                 feedback={errors.terms}
-                as ={Form.Check}
               />
-            </Form.Group> */}
+            </Form.Group>
             <Button size="lg" type="submit" disabled={isSubmitting}>
               Submit
             </Button>
