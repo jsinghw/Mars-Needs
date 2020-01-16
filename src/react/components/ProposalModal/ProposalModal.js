@@ -15,25 +15,29 @@ class ProposalModal extends React.Component {
             <Modal.Title>{this.props._id}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>Title: {this.props.proposal_title}</p>
-            <p>Submission Date: December 03 2019</p>
-            <p>Category: {this.props.proposal_category}</p>
-            <p>Name: {this.props.name}</p>
-            <p>E-mail: {this.props.email}</p>
-            <p>Phone: {this.props.phone_number}</p>
+            <br />
+            <div className="pageHeader">
+              <p>Title: {this.props.proposal_title}</p>
+              <p>Submission Date: December 03 2019</p>
+              <p>Category: {this.props.proposal_category}</p>
+              <p>Name: {this.props.name}</p>
+              <p>E-mail: {this.props.email}</p>
+              <p>Phone: {this.props.phone_number}</p>
+              <p>
+                Website:
+                <a
+                  href={this.props.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {this.props.website}
+                </a>
+              </p>
+              <p>Company: {this.props.company}</p>
+              <p>Industry: {this.props.industry}</p>
+            </div>
             <p>
-              Website:{" "}
-              <a
-                href={this.props.website}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {this.props.website}
-              </a>
-            </p>
-            <p>Company: {this.props.company}</p>
-            <p>Industry: {this.props.industry}</p>
-            <p>
+              <br />
               Details: <br /> {this.props.proposal_details}
             </p>
           </Modal.Body>
