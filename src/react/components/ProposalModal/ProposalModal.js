@@ -18,14 +18,19 @@ class ProposalModal extends React.Component {
             <p>Title: {this.props.proposal_title}</p>
             <p>Submission Date: December 03 2019</p>
             <p>Category: {this.props.proposal_category}</p>
-            <p>{this.props.proposal_details}</p>
+            <p>Name: {this.props.name}</p>
+            <p>E-mail: {this.props.email}</p>
+            <p>Phone: {this.props.phone_number}</p>
+            <p>Website: {this.props.website}</p>
+            <p>Company: {this.props.company}</p>
+            <p>Industry: {this.props.industry}</p>
+            <p>
+              Details: <br /> {this.props.proposal_details}
+            </p>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.props.toggle}>
               Close
-            </Button>
-            <Button variant="secondary" onClick={this.showData}>
-              data
             </Button>
           </Modal.Footer>
         </Modal>
