@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const Styles = styled.div`
   .navbar {
-    background-color: salmon;
+    // background-color: salmon;
   }
 
   .navbar-brand,

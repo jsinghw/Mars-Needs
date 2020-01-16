@@ -5,7 +5,7 @@ import { Formik } from "formik";
 import axios from "axios";
 import { history } from "../../../redux";
 import "./ProposalForm.css";
-import { HeroImage } from "../HeroImage";
+// import { HeroImage } from "../HeroImage";
 
 class ProposalForm extends Component {
   onSubmit(values) {
