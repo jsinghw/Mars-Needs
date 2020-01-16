@@ -40,9 +40,22 @@ class Menu extends React.Component {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
               <Nav.Item>
-                <NavLink activeClassName="selected" to="/">
-                  Home
-                </NavLink>
+                <form>
+                  <input type="text" size="10" placeholder="User Name"></input>
+                  <input
+                    type="password"
+                    size="10"
+                    placeholder="Password"
+                  ></input>
+                  <button type="submit">
+                    <NavLink to="/reviewpage">Log In</NavLink>
+                  </button>
+                  <button>
+                    <NavLink activeClassName="selected" to="/">
+                      Home
+                    </NavLink>
+                  </button>
+                </form>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
