@@ -23,7 +23,7 @@ class Menu extends React.Component {
           <input type="text" size="10" placeholder="User Name"></input>
           <input type="password" size="10" placeholder="Password"></input>
           <button type="submit">
-            <NavLink to="/review">Log In</NavLink>
+            <NavLink to="/reviewpage">Log In</NavLink>
           </button>
         </form>
       </div>
